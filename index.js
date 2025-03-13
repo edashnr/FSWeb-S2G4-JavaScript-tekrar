@@ -50,8 +50,8 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(yaricap) {
+ return 2 * pi * yaricap;
 }
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -64,8 +64,8 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yaricap,pi) {
+  return pi * Math.pow(yaricap,2);
 }
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -98,28 +98,56 @@ let ucetambolunenler,
   tekraredensayilar;
 
 // 3a çözümü
-
-/* kodlar buraya */
-
+  enkucuk = sayilar[0];
+  enbuyuk = sayilar[0];
+  for (let sayi of sayilar) {
+    if (sayi > enbuyuk) {
+        enbuyuk = sayi;
+    }
+    if (sayi < enkucuk) {
+        enkucuk = sayi;
+    }
+}
 // 3b çözümü:
 
-/* kodlar buraya */
+ucetambolunenler = [];
+sayilar.forEach((sayi) => {
+  if (sayi % 3 === 0) {
+      ucetambolunenler.push(sayi);
+  }
+});
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((toplam,sayi)=>toplam+=sayi,0);
 
 // 3d çözümü
 
-/* kodlar buraya */
-
+besyuzdenkucuksayilar=[];
+besyuzdenkucuksayilar.push(sayilar.filter((sayi)=>sayi<500));
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar =[];
+siralisayilar.push(besyuzdenkucuksayilar.sort((a,b)=>a-b));
 
 // 3f çözümü
 
-/* kodlar buraya */
+tekraredensayilar =[];
+let tekrarObje ={};
+let tekrarSayilar=[];
+for (let i = 0; i < sayilar.length; i++) {
+  let sayi = sayilar[i];
+  if (tekrarObje[sayi]) {
+    tekrarObje[sayi]++;
+  } else {
+    tekrarObje[sayi] = 1;
+  }
+}
+for (let sayi in tekrarObje) {
+  let tekrarSayisi = tekrarObje[sayi];
+      if (tekrarSayisi>1){
+  tekrarSayilar.push(`${sayi} sayısı ${tekrarSayisi} kere tekrar edilmiştir`);}
+}
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
