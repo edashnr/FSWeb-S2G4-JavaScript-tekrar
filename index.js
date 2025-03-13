@@ -123,18 +123,15 @@ ucebolunenlerintoplami = ucetambolunenler.reduce((toplam,sayi)=>toplam+=sayi,0);
 
 // 3d çözümü
 
-besyuzdenkucuksayilar=[];
-besyuzdenkucuksayilar.push(sayilar.filter((sayi)=>sayi<500));
+besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500);
 // 3e çözümü
 
-siralisayilar =[];
-siralisayilar.push(besyuzdenkucuksayilar.sort((a,b)=>a-b));
+siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a - b);
 
 // 3f çözümü
 
 tekraredensayilar =[];
 let tekrarObje ={};
-let tekrarSayilar=[];
 for (let i = 0; i < sayilar.length; i++) {
   let sayi = sayilar[i];
   if (tekrarObje[sayi]) {
@@ -146,7 +143,7 @@ for (let i = 0; i < sayilar.length; i++) {
 for (let sayi in tekrarObje) {
   let tekrarSayisi = tekrarObje[sayi];
       if (tekrarSayisi>1){
-  tekrarSayilar.push(`${sayi} sayısı ${tekrarSayisi} kere tekrar edilmiştir`);}
+        tekraredensayilar.push(`${sayi} sayısı ${tekrarSayisi} kere tekrar edilmiştir`);}
 }
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
